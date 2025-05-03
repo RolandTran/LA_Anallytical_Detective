@@ -29,14 +29,64 @@ num_var <- ncol(LA_2024_02_Feb)
 num_var
 cat("There are", num_var, "variables in this dataset.")
 
+#1.2a ow many observations are there in this dataset?
+num_obs <-nrow(LA_2024_02_Feb)
+num_obs
+cat("There are", num_obs, "observations in this dataset.")
+
+# list all the variables (columns)
 cat(names(LA_2024_02_Feb), sep = "\n")
-sum(LA_2024_02_Feb$AREA.NAME == "Hollywood")
-max(LA_2024_02_Feb$Crm.Cd.Desc)
-sum(LA_2024_02_Feb$Crm.Cd.Desc == "VIOLATION OF TEMPORARY RESTRAINING ORDER")
-length(unique(LA_2024_02_Feb$Crm.Cd.Desc))
+
+# list all the AREA names
+unique(LA_2024_02_Feb$AREA.NAME)
+length(unique(LA_2024_02_Feb$AREA.NAME))
+table(LA_2024_02_Feb$AREA.NAME)
+t_AREA <- table(LA_2024_02_Feb$AREA.NAME)
+t_AREA
+
+# Max AREA
+max_AREA <- names(which.max(t_AREA))
+max_AREA
+max_count_AREA <- max(t_AREA)
+max_count_AREA
+
+# Min AREA
+min_AREA <- names(which.min(t_AREA))
+min_AREA
+min_count_AREA <- min(t_AREA)
+min_count_AREA
+
+cat("Most incidents:\n", max_AREA, "with", max_count_AREA, "incidents\n\n")
+cat("Fewest incidents:\n", min_AREA, "with", min_count_AREA, "incidents\n")
+
+
+
+
+
 unique(LA_2024_02_Feb$Crm.Cd.Desc)
+
+length(unique(LA_2024_02_Feb$Crm.Cd.Desc))
+sum(LA_2024_02_Feb$Crm.Cd.Desc == "VIOLATION OF TEMPORARY RESTRAINING ORDER")
+
+
+
+
 unique(LA_2024_02_Feb$Premis.Desc)
 length(unique(LA_2024_02_Feb$Premis.Desc))
 max((LA_2024_02_Feb$Premis.Desc))
 sum(LA_2024_02_Feb$Premis.Desc == "YARD (RESIDENTIAL/BUSINESS)")
+
+
+unique(LA_2024_02_Feb$LOCATION)
+length(unique(LA_2024_02_Feb$LOCATION))
+max((LA_2024_02_Feb$LOCATION))
+sum(LA_2024_02_Feb$LOCATION ==  "ZOO DR")
+sum(grepl("ZOO\\s*DR", LA_2024_02_Feb$LOCATION))
+
+### remove all memory from R console
+rm(list = ls())
+ls()
+list.files()
+dir()
+
     
