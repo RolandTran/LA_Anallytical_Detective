@@ -141,12 +141,45 @@ min_Premis_Desc
 min_count_Premis_Desc <- min(Premis_Desc)
 min_count_Premis_Desc
 
-cat("Premis_Desc Most incidents:
-", max_Premis_Desc, "with", max_count_Premis_Desc, "incidents
+cat("Premis_Desc Most incidents: ", max_Premis_Desc, "with", max_count_Premis_Desc, "incidents")
+cat("Premis_Desc Fewest incidents: ", min_Premis_Desc, "with", min_count_Premis_Desc, "incidents")
 
-")
-cat("Premis_Desc Fewest incidents:
-", min_Premis_Desc, "with", min_count_Premis_Desc, "incidents")
+# create separate table for MTA
+# Trim whitespace, just in case
+names(Premis_Desc) <- trimws(names(Premis_Desc))
+# Extract rows that contain "MTA" (case-insensitive for safety)
+MTA_Premis_Desc <- Premis_Desc[grep("MTA", names(Premis_Desc), ignore.case = TRUE)]
+print(MTA_Premis_Desc)
+
+
+# 1. Switch AREA.NAME to LOCATION
+Premis_Desc_string_1 <- gsub("AREA\\.NAME", "LOCATION", AREA_NAMES_string)
+cat(Premis_Desc_string_1)
+# 2. Switch AREA (as a word) to Premis_Desc (variable prefix)
+Premis_Desc_string_2 <- gsub("AREA", "LOCATION", Premis_Desc_string_1)
+cat(Premis_Desc_string_2)
+# Paste output
+# list all the LOCATION names
+unique(LA_2024_02_Feb$LOCATION)
+length(unique(LA_2024_02_Feb$LOCATION))
+table(LA_2024_02_Feb$LOCATION)
+LOCATION <- table(LA_2024_02_Feb$LOCATION)
+LOCATION
+
+# Max LOCATION
+max_LOCATION <- names(which.max(LOCATION))
+max_LOCATION
+max_count_LOCATION <- max(LOCATION)
+max_count_LOCATION
+
+# Min LOCATION
+min_LOCATION <- names(which.min(LOCATION))
+min_LOCATION
+min_count_LOCATION <- min(LOCATION)
+min_count_LOCATION
+
+cat("LOCATION Most incidents:", max_LOCATION, "with", max_count_LOCATION, "incidents")
+cat("LOCATION Fewest incidents:", min_LOCATION, "with", min_count_LOCATION, "incidents")
 
 
 
