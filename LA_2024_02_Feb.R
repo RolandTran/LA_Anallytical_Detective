@@ -41,40 +41,113 @@ cat(names(LA_2024_02_Feb), sep = "\n")
 unique(LA_2024_02_Feb$AREA.NAME)
 length(unique(LA_2024_02_Feb$AREA.NAME))
 table(LA_2024_02_Feb$AREA.NAME)
-t_AREA <- table(LA_2024_02_Feb$AREA.NAME)
-t_AREA
+AREA <- table(LA_2024_02_Feb$AREA.NAME)
+AREA
 
 # Max AREA
-max_AREA <- names(which.max(t_AREA))
+max_AREA <- names(which.max(AREA))
 max_AREA
-max_count_AREA <- max(t_AREA)
+max_count_AREA <- max(AREA)
 max_count_AREA
 
 # Min AREA
-min_AREA <- names(which.min(t_AREA))
+min_AREA <- names(which.min(AREA))
 min_AREA
-min_count_AREA <- min(t_AREA)
+min_count_AREA <- min(AREA)
 min_count_AREA
 
-cat("Most incidents:\n", max_AREA, "with", max_count_AREA, "incidents\n\n")
-cat("Fewest incidents:\n", min_AREA, "with", min_count_AREA, "incidents\n")
+cat("AREA Most incidents:\n", max_AREA, "with", max_count_AREA, "incidents\n\n")
+cat("AREA Fewest incidents:\n", min_AREA, "with", min_count_AREA, "incidents\n")
 
+# Create a string for AREA_Names
+AREA_NAMES_string <- '
+# list all the AREA names
+unique(LA_2024_02_Feb$AREA.NAME)
+length(unique(LA_2024_02_Feb$AREA.NAME))
+table(LA_2024_02_Feb$AREA.NAME)
+AREA <- table(LA_2024_02_Feb$AREA.NAME)
+AREA
 
+# Max AREA
+max_AREA <- names(which.max(AREA))
+max_AREA
+max_count_AREA <- max(AREA)
+max_count_AREA
 
+# Min AREA
+min_AREA <- names(which.min(AREA))
+min_AREA
+min_count_AREA <- min(AREA)
+min_count_AREA
 
+cat("AREA Most incidents:\n", max_AREA, "with", max_count_AREA, "incidents\n\n")
+cat("AREA Fewest incidents:\n", min_AREA, "with", min_count_AREA, "incidents\n")
+'
+cat(AREA_NAMES_string)
 
+# 1. Switch AREA.NAME to Crm.Cd.Desc
+Crm_Cd_Desc_string_1 <- gsub("AREA\\.NAME", "Crm.Cd.Desc", AREA_NAMES_string)
+cat(Crm_Cd_Desc_string_1)
+# 2. Switch AREA (as a word) to Crm_Cd_Desc (variable prefix)
+Crm_Cd_Desc_string_2 <- gsub("AREA", "Crm_Cd_Desc", Crm_Cd_Desc_string_1)
+cat(Crm_Cd_Desc_string_2)
+# Paste output
+# list all the Crm_Cd_Desc names
 unique(LA_2024_02_Feb$Crm.Cd.Desc)
-
 length(unique(LA_2024_02_Feb$Crm.Cd.Desc))
-sum(LA_2024_02_Feb$Crm.Cd.Desc == "VIOLATION OF TEMPORARY RESTRAINING ORDER")
+table(LA_2024_02_Feb$Crm.Cd.Desc)
+Crm_Cd_Desc <- table(LA_2024_02_Feb$Crm.Cd.Desc)
+Crm_Cd_Desc
+
+# Max Crm_Cd_Desc
+max_Crm_Cd_Desc <- names(which.max(Crm_Cd_Desc))
+max_Crm_Cd_Desc
+max_count_Crm_Cd_Desc <- max(Crm_Cd_Desc)
+max_count_Crm_Cd_Desc
+
+# Min Crm_Cd_Desc
+min_Crm_Cd_Desc <- names(which.min(Crm_Cd_Desc))
+min_Crm_Cd_Desc
+min_count_Crm_Cd_Desc <- min(Crm_Cd_Desc)
+min_count_Crm_Cd_Desc
+
+cat("Crm_Cd_Desc Most incidents: ", max_Crm_Cd_Desc, "with", max_count_Crm_Cd_Desc, "incidents ")
+cat("Crm_Cd_Desc Fewest incidents: ", min_Crm_Cd_Desc, "with", min_count_Crm_Cd_Desc, "incidents ")
 
 
-
-
+# 1. Switch AREA.NAME to Premis.Desc
+Premis_Desc_string_1 <- gsub("AREA\\.NAME", "Premis.Desc", AREA_NAMES_string)
+cat(Premis_Desc_string_1)
+# 2. Switch AREA (as a word) to Premis_Desc (variable prefix)
+Premis_Desc_string_2 <- gsub("AREA", "Premis_Desc", Premis_Desc_string_1)
+cat(Premis_Desc_string_2)
+# Paste output
+# list all the Premis_Desc names
 unique(LA_2024_02_Feb$Premis.Desc)
 length(unique(LA_2024_02_Feb$Premis.Desc))
-max((LA_2024_02_Feb$Premis.Desc))
-sum(LA_2024_02_Feb$Premis.Desc == "YARD (RESIDENTIAL/BUSINESS)")
+table(LA_2024_02_Feb$Premis.Desc)
+Premis_Desc <- table(LA_2024_02_Feb$Premis.Desc)
+Premis_Desc
+
+# Max Premis_Desc
+max_Premis_Desc <- names(which.max(Premis_Desc))
+max_Premis_Desc
+max_count_Premis_Desc <- max(Premis_Desc)
+max_count_Premis_Desc
+
+# Min Premis_Desc
+min_Premis_Desc <- names(which.min(Premis_Desc))
+min_Premis_Desc
+min_count_Premis_Desc <- min(Premis_Desc)
+min_count_Premis_Desc
+
+cat("Premis_Desc Most incidents:
+", max_Premis_Desc, "with", max_count_Premis_Desc, "incidents
+
+")
+cat("Premis_Desc Fewest incidents:
+", min_Premis_Desc, "with", min_count_Premis_Desc, "incidents")
+
 
 
 unique(LA_2024_02_Feb$LOCATION)
