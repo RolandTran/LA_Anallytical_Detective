@@ -182,6 +182,102 @@ cat("LOCATION Most incidents:", max_LOCATION, "with", max_count_LOCATION, "incid
 cat("LOCATION Fewest incidents:", min_LOCATION, "with", min_count_LOCATION, "incidents")
 
 
+# 1. Switch AREA.NAME to Cross.Street
+Cross_Street_String_1 <- gsub("AREA\\.NAME", "Cross.Street", AREA_NAMES_string)
+cat(Cross_Street_String_1)
+# 2. Switch AREA (as a word) to Premis_Desc (variable prefix)
+Cross_Street_string_2 <- gsub("AREA", "Cross.Street", Cross_Street_String_1)
+cat(Cross_Street_string_2)
+
+# past Cross_Street_String_2 below
+# list all the Cross.Street names
+unique(LA_2024_02_Feb$Cross.Street)
+length(unique(LA_2024_02_Feb$Cross.Street))
+table(LA_2024_02_Feb$Cross.Street)
+Cross.Street <- table(LA_2024_02_Feb$Cross.Street)
+Cross.Street
+
+# Max Cross.Street
+max_Cross.Street <- names(which.max(Cross.Street))
+max_Cross.Street
+max_count_Cross.Street <- max(Cross.Street)
+max_count_Cross.Street
+
+# Min Cross.Street
+min_Cross.Street <- names(which.min(Cross.Street))
+min_Cross.Street
+min_count_Cross.Street <- min(Cross.Street)
+min_count_Cross.Street
+head(Cross.Street)
+tail(Cross.Street)
+
+cat("Cross.Street Most incidents:
+", max_Cross.Street, "with", max_count_Cross.Street, "incidents
+
+")
+cat("Cross.Street Fewest incidents:
+", min_Cross.Street, "with", min_count_Cross.Street, "incidents
+")
+
+
+# Create frequency table and exclude empty strings
+Cross.Street <- table(LA_2024_02_Feb$Cross.Street)
+Cross.Street <- Cross.Street[names(Cross.Street) != ""]
+
+# List all unique non-empty Cross.Street names
+unique_cross_street <- unique(names(Cross.Street))
+length(unique_cross_street)
+
+# View frequency table
+Cross.Street
+
+# Max Cross.Street
+max_Cross.Street <- names(which.max(Cross.Street))
+max_count_Cross.Street <- max(Cross.Street)
+
+# Min Cross.Street
+min_Cross.Street <- names(which.min(Cross.Street))
+min_count_Cross.Street <- min(Cross.Street)
+
+# Preview
+head(Cross.Street)
+tail(Cross.Street)
+
+# Output results
+cat("Cross.Street with most incidents:\n",
+    max_Cross.Street, "with", max_count_Cross.Street, "incidents\n\n")
+
+cat("Cross.Street with fewest incidents:\n",
+    min_Cross.Street, "with", min_count_Cross.Street, "incidents\n")
+
+
+
+# Remove empty string entries
+non_empty_cross <- Cross.Street[names(Cross.Street) != ""]
+cat (non_empty_cross)
+
+# Get the most frequent non-empty Cross.Street
+max_Cross.Street <- names(which.max(non_empty_cross))
+max_Cross.Street
+max_count_Cross.Street <- max(non_empty_cross)
+
+# Output
+cat("Most frequent non-empty Cross.Street:\n")
+cat("Name:", max_Cross.Street, "\n")
+cat("Count:", max_count_Cross.Street, "\n")
+
+
+# Find the least frequent Cross.Street
+min_Cross.Street <- names(which.min(non_empty_cross))
+min_count_Cross.Street <- min(non_empty_cross)
+
+# Output
+cat("Least frequent non-empty Cross.Street:\n")
+cat("Name:", min_Cross.Street, "\n")
+cat("Count:", min_count_Cross.Street, "\n")
+
+
+
 
 unique(LA_2024_02_Feb$LOCATION)
 length(unique(LA_2024_02_Feb$LOCATION))
