@@ -197,55 +197,60 @@ cat(paste0(
 ))
 
 
+# list all the variables (columns)
+cat(names(LA_2024_02_Feb), sep = "\n")
+summary(LA_2024_02_Feb)
+# onto next variable
+
 
 
 ###########################
 # Filter dataset for "VEHICLE - STOLEN"
-VEHICLE_STOLEN_table <- subset(LA_2024_02_Feb, Crm.Cd.Desc == "VEHICLE - STOLEN", select = c("AREA.NAME", "LOCATION", "Cross.Street", "Premis.Desc", "TIME.OCC", "DATE.OCC"))
+VEHICLE_STOLEN_table <- subset(LA_2024_02_Feb, Crm.Cd.Desc == "VEHICLE - STOLEN", select = c("AREA.NAME", "LOCATION", "Cross.Street", "Premis.Desc", "TIME.OCC", "DATE.OCC", "Vict.Age", "Vict.Sex", "Vict.Descent"))
 head(VEHICLE_STOLEN_table)
 tail(VEHICLE_STOLEN_table)
-
+VEHICLE_STOLEN_table
 
 # list all the AREA.NAME for Vehicle - Stolen
-unique(VEHICLE_STOLEN_tablet$AREA.NAME)
+unique(VEHICLE_STOLEN_table$AREA.NAME)
 length(unique(VEHICLE_STOLEN_table$AREA.NAME))
 table(VEHICLE_STOLEN_table$AREA.NAME)
-VEHICLE_STOLEN_AREA_NAME_table <- table(VEHICLE_STOLEN_table$AREA.NAME)
-head(VEHICLE_STOLEN_AREA_NAME_table)
+VEHICLE_STOLEN_AREA.NAME_table <- table(VEHICLE_STOLEN_table$AREA.NAME)
+head(VEHICLE_STOLEN_AREA.NAME_table)
 
-# Max VEHICLE_sTOLEN_AREA_NAME
-max_VEHICLE_STOLEN_AREA_NAME <- names(which.max(VEHICLE_STOLEN_AREA_NAME_table))
-max_VEHICLE_STOLEN_AREA_NAME
-max_VEHICLE_STOLEN_AREA_NAME_count <- max(VEHICLE_STOLEN_AREA_NAME_table)
-max_VEHICLE_STOLEN_AREA_NAME_count
+# Max VEHICLE_sTOLEN_AREA.NAME
+max_VEHICLE_STOLEN_AREA.NAME <- names(which.max(VEHICLE_STOLEN_AREA.NAME_table))
+max_VEHICLE_STOLEN_AREA.NAME
+max_VEHICLE_STOLEN_AREA.NAME_count <- max(VEHICLE_STOLEN_AREA.NAME_table)
+max_VEHICLE_STOLEN_AREA.NAME_count
 
-# Min VEHICLE_sTOLEN_AREA_NAME
-min_VEHICLE_STOLEN_AREA_NAME <- names(which.min(VEHICLE_STOLEN_AREA_NAME_table))
-min_VEHICLE_STOLEN_AREA_NAME
-min_VEHICLE_STOLEN_AREA_NAME_count <- min(VEHICLE_STOLEN_AREA_NAME_table)
-min_VEHICLE_STOLEN_AREA_NAME_count
+# Min VEHICLE_sTOLEN_AREA.NAME
+min_VEHICLE_STOLEN_AREA.NAME <- names(which.min(VEHICLE_STOLEN_AREA.NAME_table))
+min_VEHICLE_STOLEN_AREA.NAME
+min_VEHICLE_STOLEN_AREA.NAME_count <- min(VEHICLE_STOLEN_AREA.NAME_table)
+min_VEHICLE_STOLEN_AREA.NAME_count
 
-cat("VEHICLE STOLEN Most incidents: ", max_VEHICLE_STOLEN_AREA_NAME, "with", max_VEHICLE_STOLEN_AREA_NAME_count, "incidents ")
-cat("VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_AREA_NAME, "with", min_VEHICLE_STOLEN_AREA_NAME_count, "incidents ")
+cat("VEHICLE STOLEN Most incidents: ", max_VEHICLE_STOLEN_AREA.NAME, "with", max_VEHICLE_STOLEN_AREA.NAME_count, "incidents ")
+cat("VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_AREA.NAME, "with", min_VEHICLE_STOLEN_AREA.NAME_count, "incidents ")
 
 
 ### top 3 sorted for AREA.NAME
 # Sort the AREA.NAME frequency table in descending order
-Sorted_VEHICLE_STOLEN_AREA_NAME <- sort(VEHICLE_STOLEN_AREA_NAME_table, decreasing = TRUE)
-Sorted_VEHICLE_STOLEN_AREA_NAME
+Sorted_VEHICLE_STOLEN_AREA.NAME <- sort(VEHICLE_STOLEN_AREA.NAME_table, decreasing = TRUE)
+Sorted_VEHICLE_STOLEN_AREA.NAME
 # Get top 3 areas
-top_3_VEHICLE_STOLEN_AREA_NAME <- head(Sorted_VEHICLE_STOLEN_AREA_NAME, 3)
-top_3_VEHICLE_STOLEN_AREA_NAME
+top_3_VEHICLE_STOLEN_AREA.NAME <- head(Sorted_VEHICLE_STOLEN_AREA.NAME, 3)
+top_3_VEHICLE_STOLEN_AREA.NAME
 # Extract names and counts
-top_3_VEHICLE_STOLEN_AREA_NAME_names <- names(top_3_VEHICLE_STOLEN_AREA_NAME)
-top_3_VEHICLE_STOLEN_AREA_NAME_names 
-top_3_VEHICLE_STOLEN_AREA_NAME_counts <- as.numeric(top_3_VEHICLE_STOLEN_AREA_NAME)
-top_3_VEHICLE_STOLEN_AREA_NAME_counts
+top_3_VEHICLE_STOLEN_AREA.NAME_names <- names(top_3_VEHICLE_STOLEN_AREA.NAME)
+top_3_VEHICLE_STOLEN_AREA.NAME_names 
+top_3_VEHICLE_STOLEN_AREA.NAME_counts <- as.numeric(top_3_VEHICLE_STOLEN_AREA.NAME)
+top_3_VEHICLE_STOLEN_AREA.NAME_counts
 # Print summary sentence
 cat(paste0(
-  top_3_VEHICLE_STOLEN_AREA_NAME_names[1], " had the most vehicle thefts with ", top_3_VEHICLE_STOLEN_AREA_NAME_counts[1], " cases; ",
-  top_3_VEHICLE_STOLEN_AREA_NAME_names[2], " followed with ", top_3_VEHICLE_STOLEN_AREA_NAME_counts[2], " cases; and ",
-  top_3_VEHICLE_STOLEN_AREA_NAME_names[3], " had ", top_3_VEHICLE_STOLEN_AREA_NAME_counts[3], " cases."
+  top_3_VEHICLE_STOLEN_AREA.NAME_names[1], " had the most vehicle thefts with ", top_3_VEHICLE_STOLEN_AREA.NAME_counts[1], " cases; ",
+  top_3_VEHICLE_STOLEN_AREA.NAME_names[2], " followed with ", top_3_VEHICLE_STOLEN_AREA.NAME_counts[2], " cases; and ",
+  top_3_VEHICLE_STOLEN_AREA.NAME_names[3], " had ", top_3_VEHICLE_STOLEN_AREA.NAME_counts[3], " cases."
 ))
 
 #######
@@ -307,7 +312,7 @@ top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_counts
 # Print results
 top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC <- data.frame(TIME.OCC = top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_names, Count = top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_counts)
 print(top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC)
-                      
+
 # Max/Min DATE.OCC
 VEHICLE_STOLEN_Newton_DATE.OCC_table <- table(VEHICLE_STOLEN_Newton_table$DATE.OCC)
 head(VEHICLE_STOLEN_Newton_DATE.OCC_table)
@@ -324,7 +329,7 @@ head(VEHICLE_STOLEN_Newton_DATE.OCC_table)
 sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC <- sort(VEHICLE_STOLEN_Newton_DATE.OCC_table, decreasing = TRUE)
 sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC
 
-# Extract top 3 DATE.OCC names and counts
+# Extract top 3 DATE.OCC names and counts for Newton
 top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_names <- names(sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC[1:3])
 top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_names
 top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_counts <- as.numeric(sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC[1:3])
@@ -347,11 +352,256 @@ print(top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC)
 
 
 
+### switch from AREA.NAME to TIME.OCC for Vehicle stolen
+VEHICLE_STOLEN_AREA.NAME_String <- '
+
+###########################
+# Filter dataset for "VEHICLE - STOLEN"
+VEHICLE_STOLEN_table <- subset(LA_2024_02_Feb, Crm.Cd.Desc == "VEHICLE - STOLEN", select = c("AREA.NAME", "LOCATION", "Cross.Street", "Premis.Desc", "TIME.OCC", "DATE.OCC", "Vict.Age", "Vict.Sex", "Vict.Descent"))
+head(VEHICLE_STOLEN_table)
+tail(VEHICLE_STOLEN_table)
+VEHICLE_STOLEN_table
+
+# list all the AREA.NAME for Vehicle - Stolen
+unique(VEHICLE_STOLEN_table$AREA.NAME)
+length(unique(VEHICLE_STOLEN_table$AREA.NAME))
+table(VEHICLE_STOLEN_table$AREA.NAME)
+VEHICLE_STOLEN_AREA.NAME_table <- table(VEHICLE_STOLEN_table$AREA.NAME)
+head(VEHICLE_STOLEN_AREA.NAME_table)
+
+# Max VEHICLE_sTOLEN_AREA.NAME
+max_VEHICLE_STOLEN_AREA.NAME <- names(which.max(VEHICLE_STOLEN_AREA.NAME_table))
+max_VEHICLE_STOLEN_AREA.NAME
+max_VEHICLE_STOLEN_AREA.NAME_count <- max(VEHICLE_STOLEN_AREA.NAME_table)
+max_VEHICLE_STOLEN_AREA.NAME_count
+
+# Min VEHICLE_sTOLEN_AREA.NAME
+min_VEHICLE_STOLEN_AREA.NAME <- names(which.min(VEHICLE_STOLEN_AREA.NAME_table))
+min_VEHICLE_STOLEN_AREA.NAME
+min_VEHICLE_STOLEN_AREA.NAME_count <- min(VEHICLE_STOLEN_AREA.NAME_table)
+min_VEHICLE_STOLEN_AREA.NAME_count
+
+cat("VEHICLE STOLEN Most incidents: ", max_VEHICLE_STOLEN_AREA.NAME, "with", max_VEHICLE_STOLEN_AREA.NAME_count, "incidents ")
+cat("VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_AREA.NAME, "with", min_VEHICLE_STOLEN_AREA.NAME_count, "incidents ")
 
 
+### top 3 sorted for AREA.NAME
+# Sort the AREA.NAME frequency table in descending order
+Sorted_VEHICLE_STOLEN_AREA.NAME <- sort(VEHICLE_STOLEN_AREA.NAME_table, decreasing = TRUE)
+Sorted_VEHICLE_STOLEN_AREA.NAME
+# Get top 3 areas
+top_3_VEHICLE_STOLEN_AREA.NAME <- head(Sorted_VEHICLE_STOLEN_AREA.NAME, 3)
+top_3_VEHICLE_STOLEN_AREA.NAME
+# Extract names and counts
+top_3_VEHICLE_STOLEN_AREA.NAME_names <- names(top_3_VEHICLE_STOLEN_AREA.NAME)
+top_3_VEHICLE_STOLEN_AREA.NAME_names 
+top_3_VEHICLE_STOLEN_AREA.NAME_counts <- as.numeric(top_3_VEHICLE_STOLEN_AREA.NAME)
+top_3_VEHICLE_STOLEN_AREA.NAME_counts
+# Print summary sentence
+cat(paste0(
+  top_3_VEHICLE_STOLEN_AREA.NAME_names[1], " had the most vehicle thefts with ", top_3_VEHICLE_STOLEN_AREA.NAME_counts[1], " cases; ",
+  top_3_VEHICLE_STOLEN_AREA.NAME_names[2], " followed with ", top_3_VEHICLE_STOLEN_AREA.NAME_counts[2], " cases; and ",
+  top_3_VEHICLE_STOLEN_AREA.NAME_names[3], " had ", top_3_VEHICLE_STOLEN_AREA.NAME_counts[3], " cases."
+))
+'
+cat(VEHICLE_STOLEN_AREA.NAME_String)
 
 
+# 1. Crete VEHICLE_STOLEN_TIME.OCC string
+VEHICLE_STOLEN_TIME.OCC <- gsub("AREA.NAME", "TIME.OCC", VEHICLE_STOLEN_AREA.NAME_String)
+cat(VEHICLE_STOLEN_TIME.OCC)
+#paste below and run
 
+###########################
+# Filter dataset for "VEHICLE - STOLEN"
+VEHICLE_STOLEN_table <- subset(LA_2024_02_Feb, Crm.Cd.Desc == "VEHICLE - STOLEN", select = c("TIME.OCC", "LOCATION", "Cross.Street", "Premis.Desc", "TIME.OCC", "DATE.OCC", "Vict.Age", "Vict.Sex", "Vict.Descent"))
+head(VEHICLE_STOLEN_table)
+tail(VEHICLE_STOLEN_table)
+VEHICLE_STOLEN_table
+
+# list all the TIME.OCC for Vehicle - Stolen
+unique(VEHICLE_STOLEN_table$TIME.OCC)
+length(unique(VEHICLE_STOLEN_table$TIME.OCC))
+table(VEHICLE_STOLEN_table$TIME.OCC)
+VEHICLE_STOLEN_TIME.OCC_table <- table(VEHICLE_STOLEN_table$TIME.OCC)
+head(VEHICLE_STOLEN_TIME.OCC_table)
+
+# Max VEHICLE_sTOLEN_TIME.OCC
+max_VEHICLE_STOLEN_TIME.OCC <- names(which.max(VEHICLE_STOLEN_TIME.OCC_table))
+max_VEHICLE_STOLEN_TIME.OCC
+max_VEHICLE_STOLEN_TIME.OCC_count <- max(VEHICLE_STOLEN_TIME.OCC_table)
+max_VEHICLE_STOLEN_TIME.OCC_count
+
+# Min VEHICLE_sTOLEN_TIME.OCC
+min_VEHICLE_STOLEN_TIME.OCC <- names(which.min(VEHICLE_STOLEN_TIME.OCC_table))
+min_VEHICLE_STOLEN_TIME.OCC
+min_VEHICLE_STOLEN_TIME.OCC_count <- min(VEHICLE_STOLEN_TIME.OCC_table)
+min_VEHICLE_STOLEN_TIME.OCC_count
+
+cat("VEHICLE STOLEN Most incidents: ", max_VEHICLE_STOLEN_TIME.OCC, "with", max_VEHICLE_STOLEN_TIME.OCC_count, "incidents ")
+cat("VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_TIME.OCC, "with", min_VEHICLE_STOLEN_TIME.OCC_count, "incidents ")
+
+
+### top 3 sorted for TIME.OCC
+# Sort the TIME.OCC frequency table in descending order
+Sorted_VEHICLE_STOLEN_TIME.OCC <- sort(VEHICLE_STOLEN_TIME.OCC_table, decreasing = TRUE)
+Sorted_VEHICLE_STOLEN_TIME.OCC
+# Get top 3 time.occ
+top_3_VEHICLE_STOLEN_TIME.OCC <- head(Sorted_VEHICLE_STOLEN_TIME.OCC, 3)
+top_3_VEHICLE_STOLEN_TIME.OCC
+# Extract names and counts
+top_3_VEHICLE_STOLEN_TIME.OCC_names <- names(top_3_VEHICLE_STOLEN_TIME.OCC)
+top_3_VEHICLE_STOLEN_TIME.OCC_names 
+top_3_VEHICLE_STOLEN_TIME.OCC_counts <- as.numeric(top_3_VEHICLE_STOLEN_TIME.OCC)
+top_3_VEHICLE_STOLEN_TIME.OCC_counts
+# Print summary sentence
+cat(paste0(
+  top_3_VEHICLE_STOLEN_TIME.OCC_names[1], " had the most vehicle thefts with ", top_3_VEHICLE_STOLEN_TIME.OCC_counts[1], " cases; ",
+  top_3_VEHICLE_STOLEN_TIME.OCC_names[2], " followed with ", top_3_VEHICLE_STOLEN_TIME.OCC_counts[2], " cases; and ",
+  top_3_VEHICLE_STOLEN_TIME.OCC_names[3], " had ", top_3_VEHICLE_STOLEN_TIME.OCC_counts[3], " cases."
+))
+
+
+# list all the variables (columns)
+cat(names(LA_2024_02_Feb), sep = "\n")
+summary(LA_2024_02_Feb)
+# onto next variable
+
+
+# 1. Crete VEHICLE_STOLEN_DATE.OCC string
+VEHICLE_STOLEN_DATE.OCC <- gsub("AREA.NAME", "DATE.OCC", VEHICLE_STOLEN_AREA.NAME_String)
+cat(VEHICLE_STOLEN_DATE.OCC)
+#paste below and run
+
+###########################
+# Filter dataset for "VEHICLE - STOLEN"
+VEHICLE_STOLEN_table <- subset(LA_2024_02_Feb, Crm.Cd.Desc == "VEHICLE - STOLEN", select = c("DATE.OCC", "LOCATION", "Cross.Street", "Premis.Desc", "TIME.OCC", "DATE.OCC", "Vict.Age", "Vict.Sex", "Vict.Descent"))
+head(VEHICLE_STOLEN_table)
+tail(VEHICLE_STOLEN_table)
+VEHICLE_STOLEN_table
+
+# list all the DATE.OCC for Vehicle - Stolen
+unique(VEHICLE_STOLEN_table$DATE.OCC)
+length(unique(VEHICLE_STOLEN_table$DATE.OCC))
+table(VEHICLE_STOLEN_table$DATE.OCC)
+VEHICLE_STOLEN_DATE.OCC_table <- table(VEHICLE_STOLEN_table$DATE.OCC)
+head(VEHICLE_STOLEN_DATE.OCC_table)
+
+# Max VEHICLE_sTOLEN_DATE.OCC
+max_VEHICLE_STOLEN_DATE.OCC <- names(which.max(VEHICLE_STOLEN_DATE.OCC_table))
+max_VEHICLE_STOLEN_DATE.OCC
+max_VEHICLE_STOLEN_DATE.OCC_count <- max(VEHICLE_STOLEN_DATE.OCC_table)
+max_VEHICLE_STOLEN_DATE.OCC_count
+
+# Min VEHICLE_sTOLEN_DATE.OCC
+min_VEHICLE_STOLEN_DATE.OCC <- names(which.min(VEHICLE_STOLEN_DATE.OCC_table))
+min_VEHICLE_STOLEN_DATE.OCC
+min_VEHICLE_STOLEN_DATE.OCC_count <- min(VEHICLE_STOLEN_DATE.OCC_table)
+min_VEHICLE_STOLEN_DATE.OCC_count
+
+cat("VEHICLE STOLEN Most incidents: ", max_VEHICLE_STOLEN_DATE.OCC, "with", max_VEHICLE_STOLEN_DATE.OCC_count, "incidents ")
+cat("VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_DATE.OCC, "with", min_VEHICLE_STOLEN_DATE.OCC_count, "incidents ")
+
+
+### top 3 sorted for DATE.OCC
+# Sort the DATE.OCC frequency table in descending order
+Sorted_VEHICLE_STOLEN_DATE.OCC <- sort(VEHICLE_STOLEN_DATE.OCC_table, decreasing = TRUE)
+Sorted_VEHICLE_STOLEN_DATE.OCC
+# Get top 3 areas
+top_3_VEHICLE_STOLEN_DATE.OCC <- head(Sorted_VEHICLE_STOLEN_DATE.OCC, 3)
+top_3_VEHICLE_STOLEN_DATE.OCC
+# Extract names and counts
+top_3_VEHICLE_STOLEN_DATE.OCC_names <- names(top_3_VEHICLE_STOLEN_DATE.OCC)
+top_3_VEHICLE_STOLEN_DATE.OCC_names 
+top_3_VEHICLE_STOLEN_DATE.OCC_counts <- as.numeric(top_3_VEHICLE_STOLEN_DATE.OCC)
+top_3_VEHICLE_STOLEN_DATE.OCC_counts
+# Print summary sentence
+cat(paste0(
+  top_3_VEHICLE_STOLEN_DATE.OCC_names[1], " had the most vehicle thefts with ", top_3_VEHICLE_STOLEN_DATE.OCC_counts[1], " cases; ",
+  top_3_VEHICLE_STOLEN_DATE.OCC_names[2], " followed with ", top_3_VEHICLE_STOLEN_DATE.OCC_counts[2], " cases; and ",
+  top_3_VEHICLE_STOLEN_DATE.OCC_names[3], " had ", top_3_VEHICLE_STOLEN_DATE.OCC_counts[3], " cases."
+))
+# Convert names to Date objects
+dates_VEHICLE_STOLEN_DATE.OCC <- as.Date(top_3_VEHICLE_STOLEN_DATE.OCC_names, format = "%m/%d/%Y %I:%M:%S %p")
+dates_VEHICLE_STOLEN_DATE.OCC
+# Extract day of the week
+days_VEHICLE_STOLEN_DATE.OCC <- weekdays(dates_VEHICLE_STOLEN_DATE.OCC)
+days_VEHICLE_STOLEN_DATE.OCC
+# Print summary sentence with day of the week
+cat(paste0(
+  days_VEHICLE_STOLEN_DATE.OCC[1], ", ", top_3_VEHICLE_STOLEN_DATE.OCC_names[1], " had the most vehicle thefts with ", top_3_VEHICLE_STOLEN_DATE.OCC_counts[1], " cases; ",
+  days_VEHICLE_STOLEN_DATE.OCC[2], ", ", top_3_VEHICLE_STOLEN_DATE.OCC_names[2], " followed with ", top_3_VEHICLE_STOLEN_DATE.OCC_counts[2], " cases; and ",
+  days_VEHICLE_STOLEN_DATE.OCC[3], ", ", top_3_VEHICLE_STOLEN_DATE.OCC_names[3], " had ", top_3_VEHICLE_STOLEN_DATE.OCC_counts[3], " cases."
+))
+
+
+###### day of week with most vehicle stolen in Feb 2024
+# Create a frequency table
+VEHICLE_STOLEN_DATE.OCC_table <- table(VEHICLE_STOLEN_table$DATE.OCC)
+
+# Convert date strings to Date objects
+dates_VEHICLE_STOLEN_DATE.OCC_table <- as.Date(names(VEHICLE_STOLEN_DATE.OCC_table), format = "%m/%d/%Y %I:%M:%S %p")
+
+# Extract day of the week
+days_VEHICLE_STOLEN_DATE.OCC_table  <- weekdays(dates_VEHICLE_STOLEN_DATE.OCC_table)
+
+# Sum theft counts by day of week
+day_totals_VEHICLE_STOLEN_DATE.OCC_table <- tapply(as.numeric(VEHICLE_STOLEN_DATE.OCC_table ), days_VEHICLE_STOLEN_DATE.OCC_table , sum)
+
+# Find the day with the most vehicle thefts
+max_day_VEHICLE_STOLEN_DATE.OCC_table <- names(which.max(day_totals_VEHICLE_STOLEN_DATE.OCC_table ))
+max_day_count_VEHICLE_STOLEN_DATE.OCC_table  <- max(day_totals_VEHICLE_STOLEN_DATE.OCC_table)
+
+# Print result
+cat(paste0(max_day_VEHICLE_STOLEN_DATE.OCC_table, " had the most vehicle thefts with a total of ", max_day_count_VEHICLE_STOLEN_DATE.OCC_table, " cases.\n"))
+
+# Sort day totals in descending order
+sorted_day_totals <- sort(day_totals_VEHICLE_STOLEN_DATE.OCC_table, decreasing = TRUE)
+
+# Extract top 3 days and their counts
+top_3_days <- names(sorted_day_totals)[1:3]
+top_3_counts <- sorted_day_totals[1:3]
+
+# Print summary
+cat(paste0(
+  top_3_days[1], " had the most vehicle thefts with ", top_3_counts[1], " cases; ",
+  top_3_days[2], " followed with ", top_3_counts[2], " cases; and ",
+  top_3_days[3], " had ", top_3_counts[3], " cases.\n"
+))
+
+# Convert DATE.OCC to Date type
+VEHICLE_STOLEN_table$DATE_PARSED <- as.Date(VEHICLE_STOLEN_table$DATE.OCC, format = "%m/%d/%Y %I:%M:%S %p")
+VEHICLE_STOLEN_table$DATE_PARSED
+# Extract day of the week
+VEHICLE_STOLEN_table$DAY_OF_WEEK <- weekdays(VEHICLE_STOLEN_table$DATE_PARSED)
+VEHICLE_STOLEN_table$DAY_OF_WEEK
+# Filter records for Sunday
+Sunday_VEHICLE_STOLEN_table <- VEHICLE_STOLEN_table[VEHICLE_STOLEN_table$DAY_OF_WEEK == "Sunday", ]
+Sunday_VEHICLE_STOLEN_table
+
+# Check number of Sunday cases
+cat("Number of Sunday cases:", nrow(Sunday_VEHICLE_STOLEN_table), "\n")
+
+# Tabulate TIME.OCC for Sunday
+Sunday_time_occ_table <- table(Sunday_VEHICLE_STOLEN_table$TIME.OCC)
+Sunday_time_occ_table
+# Sort TIME.OCC frequencies in descending order
+Sunday_time_occ_sorted <- sort(Sunday_time_occ_table, decreasing = TRUE)
+Sunday_time_occ_sorted
+# Extract top 3 TIME.OCC values and their counts
+top_5_times <- names(Sunday_time_occ_sorted)[1:5]
+top_5_times
+top_5_counts <- as.numeric(Sunday_time_occ_sorted[1:5])
+top_5_counts
+# Print summary
+cat(paste0(
+  "Top 3 times for vehicle theft on Sundays:\n",
+  top_5_times[1], " with ", top_5_counts[1], " cases\n",
+  top_5_times[2], " with ", top_5_counts[2], " cases\n",
+  top_5_times[3], " with ", top_5_counts[3], " cases\n",
+  top_5_times[4], " with ", top_5_counts[4], " cases\n",
+  top_5_times[5], " with ", top_5_counts[5], " cases\n"
+))
 
 
 
@@ -583,6 +833,107 @@ cat(paste0(
 # list all the variables (columns)
 cat(names(LA_2024_02_Feb), sep = "\n")
 # onto next variable
+
+
+# 1. Switch AREA.NAME to Vict.Descent
+Vict.Descent_string <- gsub("AREA.NAME", "Vict.Descent", AREA.NAMES_string)
+cat(Vict.Descent_string)
+# 2. Switch AREA (as a word) to Vict.Descent (variable prefix)
+Vict.Descent_string <- gsub("AREA", "Vict.Descent", Vict.Descent_string)
+cat(Vict.Descent_string)
+# paste below
+# list all the Vict.Descent names
+unique(LA_2024_02_Feb$Vict.Descent)
+length(unique(LA_2024_02_Feb$Vict.Descent))
+table(LA_2024_02_Feb$Vict.Descent)
+Vict.Descent <- table(LA_2024_02_Feb$Vict.Descent)
+Vict.Descent
+
+# Max Vict.Descent
+max_Vict.Descent <- names(which.max(Vict.Descent))
+max_Vict.Descent
+max_count_Vict.Descent <- max(Vict.Descent)
+max_count_Vict.Descent
+
+# Min Vict.Descent
+min_Vict.Descent <- names(which.min(Vict.Descent))
+min_Vict.Descent
+min_count_Vict.Descent <- min(Vict.Descent)
+min_count_Vict.Descent
+
+cat("Vict.Descent Most incidents:
+", max_Vict.Descent, "with", max_count_Vict.Descent, "incidents
+
+")
+cat("Vict.Descent Fewest incidents:
+", min_Vict.Descent, "with", min_count_Vict.Descent, "incidents
+")
+
+# Sort Vict.Descent.name in decreasing order
+Sorted_Vict.Descent <- sort(Vict.Descent, decreasing = TRUE)
+head(Sorted_Vict.Descent)
+tail(Sorted_Vict.Descent)
+
+# Get top 3 most frequent Vict.Descent
+top_3_Sorted_Vict.Descent <- head(Sorted_Vict.Descent, 3)
+top_3_Sorted_Vict.Descent
+
+# Extract SOrted Vict.Descent, names and counts
+top_3_Sorted_Vict.Descent_names <- names(top_3_Sorted_Vict.Descent)
+top_3_Sorted_Vict.Descent_names
+top_3_Sorted_Vict.Descent_counts <- as.numeric(top_3_Sorted_Vict.Descent)
+top_3_Sorted_Vict.Descent_counts
+
+# Print summary sentence
+cat(paste0(
+  top_3_Sorted_Vict.Descent_names[1], " had the most incidents with ", top_3_Sorted_Vict.Descent_counts[1], " cases; ",
+  top_3_Sorted_Vict.Descent_names[2], " followed with ", top_3_Sorted_Vict.Descent_counts[2], " cases; and ",
+  top_3_Sorted_Vict.Descent_names[3], " had ", top_3_Sorted_Vict.Descent_counts[3], " cases."
+))
+
+# Create legend lookup for Vict.Descent codes
+vict_descent_legend <- c(
+  A = "Asian",
+  B = "Black",
+  C = "Chinese",
+  D = "Cambodian",
+  F = "Filipino",
+  G = "Guamanian",
+  H = "Hispanic/Latin/Mexican",
+  I = "American Indian/Alaskan Native",
+  J = "Japanese",
+  K = "Korean",
+  L = "Laotian",
+  O = "Other",
+  P = "Pacific Islander",
+  S = "Samoan",
+  U = "Hawaiian",
+  V = "Vietnamese",
+  W = "White",
+  X = "Unknown",
+  Z = "Asian Indian"
+)
+
+# Get top 3 Vict.Descent names and counts
+top_3_names <- names(top_3_Sorted_Vict.Descent)
+top_3_labels <- vict_descent_legend[top_3_names]
+top_3_counts <- as.numeric(top_3_Sorted_Vict.Descent)
+
+# Print summary with full legend names
+cat(paste0(
+  top_3_labels[1], " had the most Vict.Descent incidents with ", top_3_counts[1], " cases; ",
+  top_3_labels[2], " followed with ", top_3_counts[2], " cases; and ",
+  top_3_labels[3], " had ", top_3_counts[3], " cases."
+))
+
+
+
+
+# list all the variables (columns)
+cat(names(LA_2024_02_Feb), sep = "\n")
+# onto next variable
+
+
 
 
 # 1. Switch AREA.NAME to TIME.OCC
