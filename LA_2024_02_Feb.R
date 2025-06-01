@@ -46,19 +46,19 @@ AREA.NAME_2024_02_Feb <- table(LA_2024_02_Feb$AREA.NAME)
 AREA.NAME_2024_02_Feb
 
 # Max AREA_NAME
-max_AREA.NAME_2024_02_Feb <- names(which.max(AREA.NAME_2024_02_Feb))
-max_AREA.NAME_2024_02_Feb
+max_name_AREA.NAME_2024_02_Feb <- names(which.max(AREA.NAME_2024_02_Feb))
+max_name_AREA.NAME_2024_02_Feb
 max_count_AREA.NAME_2024_02_Feb <- max(AREA.NAME_2024_02_Feb)
 max_count_AREA.NAME_2024_02_Feb
 
 # Min AREA_NAME
-min_AREA.NAME_2024_02_Feb <- names(which.min(AREA.NAME_2024_02_Feb))
-min_AREA.NAME_2024_02_Feb
+min_name_AREA.NAME_2024_02_Feb <- names(which.min(AREA.NAME_2024_02_Feb))
+min_name_AREA.NAME_2024_02_Feb
 min_count_AREA.NAME_2024_02_Feb <- min(AREA.NAME_2024_02_Feb)
 min_count_AREA.NAME_2024_02_Feb
 
-cat("AREA Most incidents:\n", max_AREA.NAME_2024_02_Feb, "with", max_count_AREA.NAME_2024_02_Feb, "incidents for 2024_02_Feb\n\n")
-cat("AREA Fewest incidents:\n", min_AREA.NAME_2024_02_Feb, "with", min_count_AREA.NAME_2024_02_Feb, "incidents for 2024_02_Feb\n\n")
+cat("AREA Most incidents:\n", max_name_AREA.NAME_2024_02_Feb, "with", max_count_AREA.NAME_2024_02_Feb, "incidents for 2024_02_Feb\n\n")
+cat("AREA Fewest incidents:\n", min_name_AREA.NAME_2024_02_Feb, "with", min_count_AREA.NAME_2024_02_Feb, "incidents for 2024_02_Feb\n\n")
 
 # Sort AREA.name in decreasing order
 Sorted_AREA.NAME_2024_02_Feb <- sort(AREA.NAME_2024_02_Feb, decreasing = TRUE)
@@ -148,19 +148,19 @@ AREA.NAME_2024_02_Feb <- table(LA_2024_02_Feb$AREA.NAME)
 AREA.NAME_2024_02_Feb
 
 # Max AREA_NAME
-max_AREA.NAME_2024_02_Feb <- names(which.max(AREA.NAME_2024_02_Feb))
-max_AREA.NAME_2024_02_Feb
+max_name_AREA.NAME_2024_02_Feb <- names(which.max(AREA.NAME_2024_02_Feb))
+max_name_AREA.NAME_2024_02_Feb
 max_count_AREA.NAME_2024_02_Feb <- max(AREA.NAME_2024_02_Feb)
 max_count_AREA.NAME_2024_02_Feb
 
 # Min AREA_NAME
-min_AREA.NAME_2024_02_Feb <- names(which.min(AREA.NAME_2024_02_Feb))
-min_AREA.NAME_2024_02_Feb
+min_name_AREA.NAME_2024_02_Feb <- names(which.min(AREA.NAME_2024_02_Feb))
+min_name_AREA.NAME_2024_02_Feb
 min_count_AREA.NAME_2024_02_Feb <- min(AREA.NAME_2024_02_Feb)
 min_count_AREA.NAME_2024_02_Feb
 
-cat("AREA Most incidents:\n", max_AREA.NAME_2024_02_Feb, "with", max_count_AREA.NAME_2024_02_Feb, "incidents for 2024_02_Feb\n\n")
-cat("AREA Fewest incidents:\n", min_AREA.NAME_2024_02_Feb, "with", min_count_AREA.NAME_2024_02_Feb, "incidents for 2024_02_Feb\n\n")
+cat("AREA Most incidents:\n", max_name_AREA.NAME_2024_02_Feb, "with", max_count_AREA.NAME_2024_02_Feb, "incidents for 2024_02_Feb\n\n")
+cat("AREA Fewest incidents:\n", min_name_AREA.NAME_2024_02_Feb, "with", min_count_AREA.NAME_2024_02_Feb, "incidents for 2024_02_Feb\n\n")
 
 # Sort AREA.name in decreasing order
 Sorted_AREA.NAME_2024_02_Feb <- sort(AREA.NAME_2024_02_Feb, decreasing = TRUE)
@@ -208,23 +208,23 @@ Crm.Cd.Desc_2024_02_Feb <- table(LA_2024_02_Feb$Crm.Cd.Desc)
 Crm.Cd.Desc_2024_02_Feb
 
 # Max Crm.Cd.Desc
-max_Crm.Cd.Desc_2024_02_Feb <- names(which.max(Crm.Cd.Desc_2024_02_Feb))
-max_Crm.Cd.Desc_2024_02_Feb
+max_name_Crm.Cd.Desc_2024_02_Feb <- names(which.max(Crm.Cd.Desc_2024_02_Feb))
+max_name_Crm.Cd.Desc_2024_02_Feb
 max_count_Crm.Cd.Desc_2024_02_Feb <- max(Crm.Cd.Desc_2024_02_Feb)
 max_count_Crm.Cd.Desc_2024_02_Feb
 
 # Min Crm.Cd.Desc
-min_Crm.Cd.Desc_2024_02_Feb <- names(which.min(Crm.Cd.Desc_2024_02_Feb))
-min_Crm.Cd.Desc_2024_02_Feb
+min_name_Crm.Cd.Desc_2024_02_Feb <- names(which.min(Crm.Cd.Desc_2024_02_Feb))
+min_name_Crm.Cd.Desc_2024_02_Feb
 min_count_Crm.Cd.Desc_2024_02_Feb <- min(Crm.Cd.Desc_2024_02_Feb)
 min_count_Crm.Cd.Desc_2024_02_Feb
 
 cat("Crm.Cd.Desc Most incidents:
-", max_Crm.Cd.Desc_2024_02_Feb, "with", max_count_Crm.Cd.Desc_2024_02_Feb, "incidents for 2024_02_Feb
+", max_name_Crm.Cd.Desc_2024_02_Feb, "with", max_count_Crm.Cd.Desc_2024_02_Feb, "incidents for 2024_02_Feb
 
 ")
 cat("Crm.Cd.Desc Fewest incidents:
-", min_Crm.Cd.Desc_2024_02_Feb, "with", min_count_Crm.Cd.Desc_2024_02_Feb, "incidents for 2024_02_Feb
+", min_name_Crm.Cd.Desc_2024_02_Feb, "with", min_count_Crm.Cd.Desc_2024_02_Feb, "incidents for 2024_02_Feb
 
 ")
 
@@ -250,6 +250,7 @@ cat(paste0(
   top_3_Sorted_Crm.Cd.Desc_names_2024_02_Feb[3], " had ", top_3_Sorted_Crm.Cd.Desc_counts_2024_02_Feb[3], " cases."
 ))
 
+
 # list all the variables (columns)
 cat(names(LA_2024_02_Feb), sep = "\n")
 summary(LA_2024_02_Feb)
@@ -272,19 +273,19 @@ VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table <- table(VEHICLE_STOLEN_2024_02_Feb_t
 head(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table)
 
 # Max VEHICLE_STOLEN_AREA.NAME
-max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb <- names(which.max(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table))
-max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb
+max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_name <- names(which.max(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table))
+max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_name
 max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count <- max(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table)
 max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count
 
 # Min VEHICLE_STOLEN_AREA.NAME
-min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb <- names(which.min(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table))
-min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb
+min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_name <- names(which.min(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table))
+min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_name
 min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count <- min(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table)
 min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count
 
-cat("For 2024_02_Feb. Area with VEHICLE STOLEN Most incidents: ",max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb, "with", max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count, "incidents ")
-cat("For 2024_02_Feb, Area with VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb, "with", min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count, "incidents ")
+cat("For 2024_02_Feb. Area with VEHICLE STOLEN Most incidents: ",max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_name, "with", max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count, "incidents ")
+cat("For 2024_02_Feb, Area with VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_name, "with", min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count, "incidents ")
 
 
 ### top 3 sorted for AREA.NAME
@@ -424,19 +425,19 @@ VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table <- table(VEHICLE_STOLEN_2024_02_Feb_t
 head(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table)
 
 # Max VEHICLE_STOLEN_AREA.NAME
-max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb <- names(which.max(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table))
-max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb
+max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_name <- names(which.max(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table))
+max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_name
 max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count <- max(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table)
 max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count
 
 # Min VEHICLE_STOLEN_AREA.NAME
-min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb <- names(which.min(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table))
-min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb
+min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_name <- names(which.min(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table))
+min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_name
 min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count <- min(VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_table)
 min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count
 
-cat("For 2024_02_Feb. AREA with VEHICLE STOLEN Most incidents: ",max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb, "with", max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count, "incidents ")
-cat("For 2024_02_Feb, AREA with VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb, "with", min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count, "incidents ")
+cat("For 2024_02_Feb. Area with VEHICLE STOLEN Most incidents: ",max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_name, "with", max_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count, "incidents ")
+cat("For 2024_02_Feb, Area with VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_name, "with", min_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_count, "incidents ")
 
 
 ### top 3 sorted for AREA.NAME
@@ -447,15 +448,16 @@ Sorted_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb
 top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb <- head(Sorted_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb, 3)
 top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb
 # Extract names and counts
-top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb <- names(top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb)
-top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb 
+top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_names <- names(top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb)
+top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_names 
+# Extract counts
 top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_counts <- as.numeric(top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb)
 top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_counts
 # Print summary sentence
 cat(paste0(
-  top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb[1], " had the most vehicle thefts for 2024_02_Feb with ", top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_counts[1], " cases; ",
-  top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb[2], " followed with ", top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_counts[2], " cases; and ",
-  top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb[3], " had ", top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_counts[3], " cases."
+  top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_names [1], " had the most vehicle thefts for 2024_02_Feb with ", top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_counts[1], " cases; ",
+  top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_names [2], " followed with ", top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_counts[2], " cases; and ",
+  top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_names [3], " had ", top_3_VEHICLE_STOLEN_AREA.NAME_2024_02_Feb_counts[3], " cases."
 ))
 
 '
@@ -472,6 +474,7 @@ cat(VEHICLE_STOLEN_TIME.OCC_2024_02_Feb)
 VEHICLE_STOLEN_2024_02_Feb_table <- subset(LA_2024_02_Feb, Crm.Cd.Desc == "VEHICLE - STOLEN", select = c("Crm.Cd.Desc","TIME.OCC", "LOCATION", "Cross.Street","Premis.Desc", "TIME.OCC", "DATE.OCC", "Vict.Age", "Vict.Sex", "Vict.Descent"))
 head(VEHICLE_STOLEN_2024_02_Feb_table)
 tail(VEHICLE_STOLEN_2024_02_Feb_table)
+View(VEHICLE_STOLEN_2024_02_Feb_table)
 
 # list all the TIME.OCC for Vehicle - Stolen
 unique(VEHICLE_STOLEN_2024_02_Feb_table$TIME.OCC)
@@ -481,19 +484,19 @@ VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_table <- table(VEHICLE_STOLEN_2024_02_Feb_ta
 head(VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_table)
 
 # Max VEHICLE_STOLEN_TIME.OCC
-max_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb <- names(which.max(VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_table))
-max_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb
+max_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_name <- names(which.max(VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_table))
+max_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_name
 max_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_count <- max(VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_table)
 max_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_count
 
 # Min VEHICLE_STOLEN_TIME.OCC
-min_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb <- names(which.min(VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_table))
-min_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb
+min_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_name <- names(which.min(VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_table))
+min_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_name
 min_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_count <- min(VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_table)
 min_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_count
 
-cat("For 2024_02_Feb. TIME with VEHICLE STOLEN Most incidents: ",max_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb, "with", max_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_count, "incidents ")
-cat("For 2024_02_Feb, TIME with VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb, "with", min_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_count, "incidents ")
+cat("For 2024_02_Feb. Area with VEHICLE STOLEN Most incidents: ",max_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_name, "with", max_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_count, "incidents ")
+cat("For 2024_02_Feb, Area with VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_name, "with", min_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_count, "incidents ")
 
 
 ### top 3 sorted for TIME.OCC
@@ -504,18 +507,17 @@ Sorted_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb
 top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb <- head(Sorted_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb, 3)
 top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb
 # Extract names and counts
-top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb <- names(top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb)
-top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb 
+top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_names <- names(top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb)
+top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_names 
+# Extract counts
 top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_counts <- as.numeric(top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb)
 top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_counts
 # Print summary sentence
 cat(paste0(
-  top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb[1], " had the most vehicle thefts for 2024_02_Feb with ", top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_counts[1], " cases; ",
-  top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb[2], " followed with ", top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_counts[2], " cases; and ",
-  top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb[3], " had ", top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_counts[3], " cases."
+  top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_names [1], " had the most vehicle thefts for 2024_02_Feb with ", top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_counts[1], " cases; ",
+  top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_names [2], " followed with ", top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_counts[2], " cases; and ",
+  top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_names [3], " had ", top_3_VEHICLE_STOLEN_TIME.OCC_2024_02_Feb_counts[3], " cases."
 ))
-
-
 
 
 # list all the variables (columns)
@@ -535,6 +537,7 @@ cat(VEHICLE_STOLEN_DATE.OCC_2024_02_Feb)
 VEHICLE_STOLEN_2024_02_Feb_table <- subset(LA_2024_02_Feb, Crm.Cd.Desc == "VEHICLE - STOLEN", select = c("Crm.Cd.Desc","DATE.OCC", "LOCATION", "Cross.Street","Premis.Desc", "TIME.OCC", "DATE.OCC", "Vict.Age", "Vict.Sex", "Vict.Descent"))
 head(VEHICLE_STOLEN_2024_02_Feb_table)
 tail(VEHICLE_STOLEN_2024_02_Feb_table)
+View(VEHICLE_STOLEN_2024_02_Feb_table)
 
 # list all the DATE.OCC for Vehicle - Stolen
 unique(VEHICLE_STOLEN_2024_02_Feb_table$DATE.OCC)
@@ -544,52 +547,39 @@ VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table <- table(VEHICLE_STOLEN_2024_02_Feb_ta
 head(VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table)
 
 # Max VEHICLE_STOLEN_DATE.OCC
-max_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb <- names(which.max(VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table))
-max_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb
+max_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_name <- names(which.max(VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table))
+max_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_name
 max_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_count <- max(VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table)
 max_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_count
 
 # Min VEHICLE_STOLEN_DATE.OCC
-min_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb <- names(which.min(VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table))
-min_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb
+min_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_name <- names(which.min(VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table))
+min_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_name
 min_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_count <- min(VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table)
 min_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_count
 
-cat("For 2024_02_Feb. Date",max_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb, "with VEHICLE STOLEN Most incidents: ", max_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_count, "incidents ")
-cat("For 2024_02_Feb, Date",min_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb, " with VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb, "with", min_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_count, "incidents ")
+cat("For 2024_02_Feb. Area with VEHICLE STOLEN Most incidents: ",max_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_name, "with", max_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_count, "incidents ")
+cat("For 2024_02_Feb, Area with VEHICLE STOLEN Fewest incidents: ", min_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_name, "with", min_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_count, "incidents ")
 
 
 ### top 3 sorted for DATE.OCC
 # Sort the DATE.OCC frequency table in descending order
 Sorted_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb <- sort(VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table, decreasing = TRUE)
-# Get top 3 DATE.OCC with counts
-top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table <- head(Sorted_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb, 3)
-top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table
-# Extract dates
-top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb <- names(top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table)
+Sorted_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb
+# Get top 3 areas
+top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb <- head(Sorted_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb, 3)
 top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb
+# Extract names and counts
+top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_names <- names(top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb)
+top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_names 
 # Extract counts
-top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_counts <- as.numeric(top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_table)
+top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_counts <- as.numeric(top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb)
 top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_counts
-
-# Convert to Date format and get weekdays
-top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_dates <- as.Date(top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb, format = "%m/%d/%Y %I:%M:%S %p")
-top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_weekdays <- weekdays(top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_dates)
-
-# Create dataframe
-top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_df <- data.frame(
-  Date = top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb,
-  Day = top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_weekdays,
-  Count = top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_counts
-)
-
-# Print results
-print(top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_df)
 # Print summary sentence
 cat(paste0(
-  top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb[1], " (", top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_weekdays[1], ") had the most vehicle thefts for 2024_02_Feb with ", top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_counts[1], " cases; ",
-  top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb[2], " (", top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_weekdays[2], ") followed with ", top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_counts[2], " cases; and ",
-  top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb[3], " (", top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_weekdays[3], ") had ", top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_counts[3], " cases."
+  top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_names [1], " had the most vehicle thefts for 2024_02_Feb with ", top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_counts[1], " cases; ",
+  top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_names [2], " followed with ", top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_counts[2], " cases; and ",
+  top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_names [3], " had ", top_3_VEHICLE_STOLEN_DATE.OCC_2024_02_Feb_counts[3], " cases."
 ))
 
 
@@ -699,7 +689,7 @@ cat(BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_string)
 BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_string <- gsub("VEHICLE STOLEN", "BATTERY - SIMPLE ASSAULT", BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_string)
 cat(BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_string)
 # paste below
-# list all the AREA.NAME for BATTERY SIMPLE ASSAULT
+# list all the AREA.NAME for Vehicle - Stolen
 unique(BATTERY_SIMPLE_ASSAULT_2024_02_Feb_table$AREA.NAME)
 length(unique(BATTERY_SIMPLE_ASSAULT_2024_02_Feb_table$AREA.NAME))
 table(BATTERY_SIMPLE_ASSAULT_2024_02_Feb_table$AREA.NAME)
@@ -707,19 +697,19 @@ BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_table <- table(BATTERY_SIMPLE_ASSAU
 head(BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_table)
 
 # Max BATTERY_SIMPLE_ASSAULT_AREA.NAME
-max_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb <- names(which.max(BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_table))
-max_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb
+max_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_name <- names(which.max(BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_table))
+max_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_name
 max_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_count <- max(BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_table)
 max_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_count
 
 # Min BATTERY_SIMPLE_ASSAULT_AREA.NAME
-min_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb <- names(which.min(BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_table))
-min_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb
+min_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_name <- names(which.min(BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_table))
+min_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_name
 min_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_count <- min(BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_table)
 min_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_count
 
-cat("For 2024_02_Feb. AREA with BATTERY - SIMPLE ASSAULT Most incidents: ",max_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb, "with", max_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_count, "incidents ")
-cat("For 2024_02_Feb, AREA with BATTERY - SIMPLE ASSAULT Fewest incidents: ", min_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb, "with", min_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_count, "incidents ")
+cat("For 2024_02_Feb. Area with BATTERY - SIMPLE ASSAULT Most incidents: ",max_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_name, "with", max_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_count, "incidents ")
+cat("For 2024_02_Feb, Area with BATTERY - SIMPLE ASSAULT Fewest incidents: ", min_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_name, "with", min_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_count, "incidents ")
 
 
 ### top 3 sorted for AREA.NAME
@@ -732,15 +722,15 @@ top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb
 # Extract names and counts
 top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_names <- names(top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb)
 top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_names 
+# Extract counts
 top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_counts <- as.numeric(top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb)
 top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_counts
 # Print summary sentence
 cat(paste0(
-  top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_names  [1], " had the most BATTERY - SIMPLE ASSAULT for 2024_02_Feb with ", top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_counts[1], " cases; ",
+  top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_names [1], " had the most vehicle thefts for 2024_02_Feb with ", top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_counts[1], " cases; ",
   top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_names [2], " followed with ", top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_counts[2], " cases; and ",
   top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_names [3], " had ", top_3_BATTERY_SIMPLE_ASSAULT_AREA.NAME_2024_02_Feb_counts[3], " cases."
 ))
-
 
 ##################
 
