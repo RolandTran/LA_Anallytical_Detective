@@ -83,9 +83,8 @@ cat(paste0(
 ))
 
 
-
 ###########################
-# Filter dataset for "Central"
+# Filter dataset for "Central" first
 Central_2024_02_Feb_table <- subset(LA_2024_02_Feb, AREA.NAME == "Central", select = c("AREA.NAME","Crm.Cd.Desc", "LOCATION", "Cross.Street", "Premis.Desc", "TIME.OCC", "DATE.OCC", "Vict.Age", "Vict.Sex", "Vict.Descent"))
 head(Central_2024_02_Feb_table)
 tail(Central_2024_02_Feb_table)
@@ -129,6 +128,159 @@ cat(paste0(
   top_3_Central_Crm.Cd.Desc_2024_02_Feb_names[1], " had the most incidents in the Central area for 2024_02_Feb  ", top_3_Central_Crm.Cd.Desc_2024_02_Feb_counts[1], " cases; ",
   top_3_Central_Crm.Cd.Desc_2024_02_Feb_names[2], " followed with ", top_3_Central_Crm.Cd.Desc_2024_02_Feb_counts[2], " cases; and ",
   top_3_Central_Crm.Cd.Desc_2024_02_Feb_names[3], " had ", top_3_Central_Crm.Cd.Desc_2024_02_Feb_counts[3], " cases."
+))
+
+
+### filter dataset for "Southwest" 2nd
+Central_Crm.Cd.Des_2024_02_Feb_names_string <- '
+###########################
+# Filter dataset for "Central" first
+Central_2024_02_Feb_table <- subset(LA_2024_02_Feb, AREA.NAME == "Central", select = c("AREA.NAME","Crm.Cd.Desc", "LOCATION", "Cross.Street", "Premis.Desc", "TIME.OCC", "DATE.OCC", "Vict.Age", "Vict.Sex", "Vict.Descent"))
+head(Central_2024_02_Feb_table)
+tail(Central_2024_02_Feb_table)
+
+# list all the Crm.Cd.Desc for AREA.NAME
+unique(Central_2024_02_Feb_table$Crm.Cd.Desc)
+length(unique(Central_2024_02_Feb_table$Crm.Cd.Desc))
+Central_Crm.Cd.Desc_2024_02_Feb_table <- table(Central_2024_02_Feb_table$Crm.Cd.Desc)
+head(Central_Crm.Cd.Desc_2024_02_Feb_table)
+
+# Max Central_Crm.Cd.Desc
+max_Central_Crm.Cd.Desc_2024_02_Feb_name <- names(which.max(Central_Crm.Cd.Desc_2024_02_Feb_table))
+max_Central_Crm.Cd.Desc_2024_02_Feb_name
+max_Central_Crm.Cd.Desc_2024_02_Feb_count <- max(Central_Crm.Cd.Desc_2024_02_Feb_table)
+max_Central_Crm.Cd.Desc_2024_02_Feb_count
+
+# Min Central_Crm.Cd.Desc
+min_Central_Crm.Cd.Desc_2024_02_Feb_name <- names(which.min(Central_Crm.Cd.Desc_2024_02_Feb_table))
+min_Central_Crm.Cd.Desc_2024_02_Feb_name
+min_Central_Crm.Cd.Desc_2024_02_Feb_count <- min(Central_Crm.Cd.Desc_2024_02_Feb_table)
+min_Central_Crm.Cd.Desc_2024_02_Feb_count
+
+cat("Central Most incidents: ", max_Central_Crm.Cd.Desc_2024_02_Feb_name, "with", max_Central_Crm.Cd.Desc_2024_02_Feb_count, "incidents for Feb 2024 ")
+cat("Central Fewest incidents: ", min_Central_Crm.Cd.Desc_2024_02_Feb_name, "with", min_Central_Crm.Cd.Desc_2024_02_Feb_count, "incidents Feb 2024")
+
+
+### top 3 sorted for Crm.Cd.Desc in the Central Area
+# Sort the Crm.Cd.Desc frequency table in descending order
+Sorted_Central_Crm.Cd.Desc_2024_02_Feb <- sort(Central_Crm.Cd.Desc_2024_02_Feb_table, decreasing = TRUE)
+Sorted_Central_Crm.Cd.Desc_2024_02_Feb
+# Get top 3 areas
+top_3_Central_Crm.Cd.Desc_2024_02_Feb <- head(Sorted_Central_Crm.Cd.Desc_2024_02_Feb, 3)
+top_3_Central_Crm.Cd.Desc_2024_02_Feb
+# Extract names and counts
+top_3_Central_Crm.Cd.Desc_2024_02_Feb_names <- names(top_3_Central_Crm.Cd.Desc_2024_02_Feb)
+top_3_Central_Crm.Cd.Desc_2024_02_Feb_names
+top_3_Central_Crm.Cd.Desc_2024_02_Feb_counts <- as.numeric(top_3_Central_Crm.Cd.Desc_2024_02_Feb)
+top_3_Central_Crm.Cd.Desc_2024_02_Feb_counts
+# Print summary sentence
+cat(paste0(
+  top_3_Central_Crm.Cd.Desc_2024_02_Feb_names[1], " had the most incidents in the Central area for 2024_02_Feb  ", top_3_Central_Crm.Cd.Desc_2024_02_Feb_counts[1], " cases; ",
+  top_3_Central_Crm.Cd.Desc_2024_02_Feb_names[2], " followed with ", top_3_Central_Crm.Cd.Desc_2024_02_Feb_counts[2], " cases; and ",
+  top_3_Central_Crm.Cd.Desc_2024_02_Feb_names[3], " had ", top_3_Central_Crm.Cd.Desc_2024_02_Feb_counts[3], " cases."
+))
+'
+cat(Central_Crm.Cd.Des_2024_02_Feb_names_string)
+# use gsub to swtich from Central to Southwest
+Southwest_Crm.Cd.Des_2024_02_Feb_names_string <- gsub("Central", "Southwest", Central_Crm.Cd.Des_2024_02_Feb_names_string)
+cat(Southwest_Crm.Cd.Des_2024_02_Feb_names_string)
+# paste output
+###########################
+# Filter dataset for "Southwest" second
+Southwest_2024_02_Feb_table <- subset(LA_2024_02_Feb, AREA.NAME == "Southwest", select = c("AREA.NAME","Crm.Cd.Desc", "LOCATION", "Cross.Street", "Premis.Desc", "TIME.OCC", "DATE.OCC", "Vict.Age", "Vict.Sex", "Vict.Descent"))
+head(Southwest_2024_02_Feb_table)
+tail(Southwest_2024_02_Feb_table)
+
+# list all the Crm.Cd.Desc for AREA.NAME
+unique(Southwest_2024_02_Feb_table$Crm.Cd.Desc)
+length(unique(Southwest_2024_02_Feb_table$Crm.Cd.Desc))
+Southwest_Crm.Cd.Desc_2024_02_Feb_table <- table(Southwest_2024_02_Feb_table$Crm.Cd.Desc)
+head(Southwest_Crm.Cd.Desc_2024_02_Feb_table)
+
+# Max Southwest_Crm.Cd.Desc
+max_Southwest_Crm.Cd.Desc_2024_02_Feb_name <- names(which.max(Southwest_Crm.Cd.Desc_2024_02_Feb_table))
+max_Southwest_Crm.Cd.Desc_2024_02_Feb_name
+max_Southwest_Crm.Cd.Desc_2024_02_Feb_count <- max(Southwest_Crm.Cd.Desc_2024_02_Feb_table)
+max_Southwest_Crm.Cd.Desc_2024_02_Feb_count
+
+# Min Southwest_Crm.Cd.Desc
+min_Southwest_Crm.Cd.Desc_2024_02_Feb_name <- names(which.min(Southwest_Crm.Cd.Desc_2024_02_Feb_table))
+min_Southwest_Crm.Cd.Desc_2024_02_Feb_name
+min_Southwest_Crm.Cd.Desc_2024_02_Feb_count <- min(Southwest_Crm.Cd.Desc_2024_02_Feb_table)
+min_Southwest_Crm.Cd.Desc_2024_02_Feb_count
+
+cat("Southwest Most incidents: ", max_Southwest_Crm.Cd.Desc_2024_02_Feb_name, "with", max_Southwest_Crm.Cd.Desc_2024_02_Feb_count, "incidents for Feb 2024 ")
+cat("Southwest Fewest incidents: ", min_Southwest_Crm.Cd.Desc_2024_02_Feb_name, "with", min_Southwest_Crm.Cd.Desc_2024_02_Feb_count, "incidents Feb 2024")
+
+
+### top 3 sorted for Crm.Cd.Desc in the Southwest Area
+# Sort the Crm.Cd.Desc frequency table in descending order
+Sorted_Southwest_Crm.Cd.Desc_2024_02_Feb <- sort(Southwest_Crm.Cd.Desc_2024_02_Feb_table, decreasing = TRUE)
+Sorted_Southwest_Crm.Cd.Desc_2024_02_Feb
+# Get top 3 areas
+top_3_Southwest_Crm.Cd.Desc_2024_02_Feb <- head(Sorted_Southwest_Crm.Cd.Desc_2024_02_Feb, 3)
+top_3_Southwest_Crm.Cd.Desc_2024_02_Feb
+# Extract names and counts
+top_3_Southwest_Crm.Cd.Desc_2024_02_Feb_names <- names(top_3_Southwest_Crm.Cd.Desc_2024_02_Feb)
+top_3_Southwest_Crm.Cd.Desc_2024_02_Feb_names
+top_3_Southwest_Crm.Cd.Desc_2024_02_Feb_counts <- as.numeric(top_3_Southwest_Crm.Cd.Desc_2024_02_Feb)
+top_3_Southwest_Crm.Cd.Desc_2024_02_Feb_counts
+# Print summary sentence
+cat(paste0(
+  top_3_Southwest_Crm.Cd.Desc_2024_02_Feb_names[1], " had the most incidents in the Southwest area for 2024_02_Feb  ", top_3_Southwest_Crm.Cd.Desc_2024_02_Feb_counts[1], " cases; ",
+  top_3_Southwest_Crm.Cd.Desc_2024_02_Feb_names[2], " followed with ", top_3_Southwest_Crm.Cd.Desc_2024_02_Feb_counts[2], " cases; and ",
+  top_3_Southwest_Crm.Cd.Desc_2024_02_Feb_names[3], " had ", top_3_Southwest_Crm.Cd.Desc_2024_02_Feb_counts[3], " cases."
+))
+
+
+# use gsub to swtich from Central to Pacific
+Pacific_Crm.Cd.Des_2024_02_Feb_names_string <- gsub("Central", "Pacific", Central_Crm.Cd.Des_2024_02_Feb_names_string)
+cat(Pacific_Crm.Cd.Des_2024_02_Feb_names_string)
+# paste output
+###########################
+# Filter dataset for "Pacific" 3rd
+Pacific_2024_02_Feb_table <- subset(LA_2024_02_Feb, AREA.NAME == "Pacific", select = c("AREA.NAME","Crm.Cd.Desc", "LOCATION", "Cross.Street", "Premis.Desc", "TIME.OCC", "DATE.OCC", "Vict.Age", "Vict.Sex", "Vict.Descent"))
+head(Pacific_2024_02_Feb_table)
+tail(Pacific_2024_02_Feb_table)
+
+# list all the Crm.Cd.Desc for AREA.NAME
+unique(Pacific_2024_02_Feb_table$Crm.Cd.Desc)
+length(unique(Pacific_2024_02_Feb_table$Crm.Cd.Desc))
+Pacific_Crm.Cd.Desc_2024_02_Feb_table <- table(Pacific_2024_02_Feb_table$Crm.Cd.Desc)
+head(Pacific_Crm.Cd.Desc_2024_02_Feb_table)
+
+# Max Pacific_Crm.Cd.Desc
+max_Pacific_Crm.Cd.Desc_2024_02_Feb_name <- names(which.max(Pacific_Crm.Cd.Desc_2024_02_Feb_table))
+max_Pacific_Crm.Cd.Desc_2024_02_Feb_name
+max_Pacific_Crm.Cd.Desc_2024_02_Feb_count <- max(Pacific_Crm.Cd.Desc_2024_02_Feb_table)
+max_Pacific_Crm.Cd.Desc_2024_02_Feb_count
+
+# Min Pacific_Crm.Cd.Desc
+min_Pacific_Crm.Cd.Desc_2024_02_Feb_name <- names(which.min(Pacific_Crm.Cd.Desc_2024_02_Feb_table))
+min_Pacific_Crm.Cd.Desc_2024_02_Feb_name
+min_Pacific_Crm.Cd.Desc_2024_02_Feb_count <- min(Pacific_Crm.Cd.Desc_2024_02_Feb_table)
+min_Pacific_Crm.Cd.Desc_2024_02_Feb_count
+
+cat("Pacific Most incidents: ", max_Pacific_Crm.Cd.Desc_2024_02_Feb_name, "with", max_Pacific_Crm.Cd.Desc_2024_02_Feb_count, "incidents for Feb 2024 ")
+cat("Pacific Fewest incidents: ", min_Pacific_Crm.Cd.Desc_2024_02_Feb_name, "with", min_Pacific_Crm.Cd.Desc_2024_02_Feb_count, "incidents Feb 2024")
+
+### top 3 sorted for Crm.Cd.Desc in the Pacific Area
+# Sort the Crm.Cd.Desc frequency table in descending order
+Sorted_Pacific_Crm.Cd.Desc_2024_02_Feb <- sort(Pacific_Crm.Cd.Desc_2024_02_Feb_table, decreasing = TRUE)
+Sorted_Pacific_Crm.Cd.Desc_2024_02_Feb
+# Get top 3 areas
+top_3_Pacific_Crm.Cd.Desc_2024_02_Feb <- head(Sorted_Pacific_Crm.Cd.Desc_2024_02_Feb, 3)
+top_3_Pacific_Crm.Cd.Desc_2024_02_Feb
+# Extract names and counts
+top_3_Pacific_Crm.Cd.Desc_2024_02_Feb_names <- names(top_3_Pacific_Crm.Cd.Desc_2024_02_Feb)
+top_3_Pacific_Crm.Cd.Desc_2024_02_Feb_names
+top_3_Pacific_Crm.Cd.Desc_2024_02_Feb_counts <- as.numeric(top_3_Pacific_Crm.Cd.Desc_2024_02_Feb)
+top_3_Pacific_Crm.Cd.Desc_2024_02_Feb_counts
+# Print summary sentence
+cat(paste0(
+  top_3_Pacific_Crm.Cd.Desc_2024_02_Feb_names[1], " had the most incidents in the Pacific area for 2024_02_Feb  ", top_3_Pacific_Crm.Cd.Desc_2024_02_Feb_counts[1], " cases; ",
+  top_3_Pacific_Crm.Cd.Desc_2024_02_Feb_names[2], " followed with ", top_3_Pacific_Crm.Cd.Desc_2024_02_Feb_counts[2], " cases; and ",
+  top_3_Pacific_Crm.Cd.Desc_2024_02_Feb_names[3], " had ", top_3_Pacific_Crm.Cd.Desc_2024_02_Feb_counts[3], " cases."
 ))
 
 
@@ -370,42 +522,129 @@ top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_counts
 # Print results
 top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb <- data.frame(TIME.OCC = top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_names, Count = top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_counts)
 print(top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb)
+# print it out in a sentence
+# Print summary sentence
+cat(paste0(
+  top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_names [1], " had the most vehicle thefts in the Newton area for 2024_02_Feb with ", top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_counts[1], " cases; ",
+  top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_names [2], " followed with ", top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_counts [2], " cases; and ",
+  top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_names [3], " had ", top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_counts [3], " cases."
+))
 
-# Max/Min DATE.OCC
-VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_table <- table(VEHICLE_STOLEN_Newton_2024_02_Feb_table$DATE.OCC)
-head(VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_table)
-max_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_name <- names(which.max(VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_table))
-max_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_name
-max_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_count <- max(VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_table)
-max_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_count 
+
+VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_table_string <- '
+# Max/Min(1) TIME.OCC
+VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_table <- table(VEHICLE_STOLEN_Newton_2024_02_Feb_table$TIME.OCC)
+head(VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_table)
+max_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_name <- names(which.max(VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_table))
+max_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_name 
+max_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_count <- max(VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_table)
+max_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_count
 
 # Create frequency table
-VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_table <- table(VEHICLE_STOLEN_Newton_2024_02_Feb_table$DATE.OCC)
-VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_table
-head(VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_table)
+VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_table <- table(VEHICLE_STOLEN_Newton_2024_02_Feb_table$TIME.OCC)
+VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_table 
 # Sort in descending order
-sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb <- sort(VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_table, decreasing = TRUE)
-sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb
-
-# Extract top 3 DATE.OCC names and counts for Newton
-top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_names <- names(sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb[1:3])
-top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_names
-top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_counts <- as.numeric(sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb[1:3])
-top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_counts
-
+sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb <- sort(VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_table, decreasing = TRUE)
+sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb 
+# Extract top 3 TIME.OCC names and counts
+top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_names <- names(sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb[1:3])
+top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_names
+top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_counts <- as.numeric(sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb[1:3])
+top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_counts
 # Print results
-top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb <- data.frame(DATE.OCC = top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_names, Counts = top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb_counts)
-top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb
+top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb <- data.frame(TIME.OCC = top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_names, Count = top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_counts)
+print(top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb)
+# print it out in a sentence
+# Print summary sentence
+cat(paste0(
+  top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_names [1], " had the most vehicle thefts in the Newton area for 2024_02_Feb with ", top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_counts[1], " cases; ",
+  top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_names [2], " followed with ", top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_counts [2], " cases; and ",
+  top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_names [3], " had ", top_3_sorted_VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_counts [3], " cases."
+))
+'
+cat(VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_table_string)
 
-# Convert DATE.OCC to Date format (if not already)
-top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb$DATE.OCC <- as.Date(top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb$DATE.OCC, format = "%m/%d/%Y")
-top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb$DATE.OC
-# Add a new column for the day of the week
-top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb$Day.of.Week <- weekdays(top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb$DATE.OCC)
-top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb$Day.of.Week
-# Print updated results
-print(top_3_sorted_DATE_VEHICLE_STOLEN_Newton_DATE.OCC_2024_02_Feb)
+#use gsub to switch TIME.OCC for Premis.Desc
+VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_table_string <- gsub ("TIME.OCC", "Premis.Desc",VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_table_string )
+cat(VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_table_string)
+# paste output below
+# Max/Min(1) Premis.Desc
+VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_table <- table(VEHICLE_STOLEN_Newton_2024_02_Feb_table$Premis.Desc)
+head(VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_table)
+max_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_name <- names(which.max(VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_table))
+max_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_name 
+max_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_count <- max(VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_table)
+max_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_count
 
+# Create frequency table
+VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_table <- table(VEHICLE_STOLEN_Newton_2024_02_Feb_table$Premis.Desc)
+VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_table 
+# Sort in descending order
+sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb <- sort(VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_table, decreasing = TRUE)
+sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb 
+# Extract top 3 Premis.Desc names and counts
+top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_names <- names(sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb[1:3])
+top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_names
+top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_counts <- as.numeric(sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb[1:3])
+top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_counts
+# Print results
+top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb <- data.frame(Premis.Desc = top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_names, Count = top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_counts)
+print(top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb)
+# print it out in a sentence
+# Print summary sentence
+cat(paste0(
+  top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_names [1], " had the most vehicle thefts in the Newton area for 2024_02_Feb with ", top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_counts[1], " cases; ",
+  top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_names [2], " followed with ", top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_counts [2], " cases; and ",
+  top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_names [3], " had ", top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_2024_02_Feb_counts [3], " cases."
+))
+
+
+
+# get the times for street foR Newton area
+VEHICLE_STOLEN_Newton_Premis.Desc_STREET_2024_02_Feb_table <- subset(VEHICLE_STOLEN_Newton_2024_02_Feb_table, Premis.Desc == "STREET")
+head(VEHICLE_STOLEN_Newton_Premis.Desc_STREET_2024_02_Feb_table)
+# switch out TIME.OCC for Premis.Desc_STREET
+VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_table <- gsub("STOLEN_Newton", "STOLEN_Newton_Premis.Desc_Street",VEHICLE_STOLEN_Newton_TIME.OCC_2024_02_Feb_table_string )
+cat(VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_table )
+VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_table <- gsub("Street", "STREET",VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_table )
+cat(VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_table )
+# paste below
+# Max/Min(1) TIME.OCC
+VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_table <- table(VEHICLE_STOLEN_Newton_Premis.Desc_STREET_2024_02_Feb_table$TIME.OCC)
+head(VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_table)
+max_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_name <- names(which.max(VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_table))
+max_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_name 
+max_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_count <- max(VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_table)
+max_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_count
+
+# Create frequency table
+VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_table <- table(VEHICLE_STOLEN_Newton_Premis.Desc_STREET_2024_02_Feb_table$TIME.OCC)
+VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_table 
+# Sort in descending order
+sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb <- sort(VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_table, decreasing = TRUE)
+sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb 
+# Extract top 3 TIME.OCC names and counts
+top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_names <- names(sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb[1:3])
+top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_names
+top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_counts <- as.numeric(sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb[1:3])
+top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_counts
+# Print results
+top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb <- data.frame(TIME.OCC = top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_names, Count = top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_counts)
+print(top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb)
+# print it out in a sentence
+# Print summary sentence
+cat(paste0(
+  top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_names [1], " had the most vehicle thefts in the STREETs of Newton area for 2024_02_Feb with ", top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_counts[1], " cases; ",
+  top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_names [2], " followed with ", top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_counts [2], " cases; and ",
+  top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_names [3], " had ", top_3_sorted_VEHICLE_STOLEN_Newton_Premis.Desc_STREET_TIME.OCC_2024_02_Feb_counts [3], " cases."
+))
+
+
+
+# list all the variables (columns)
+cat(names(LA_2024_02_Feb), sep = "\n")
+summary(LA_2024_02_Feb)
+# onto next variable
 
 
 ### switch from AREA.NAME to TIME.OCC for Vehicle stolen
